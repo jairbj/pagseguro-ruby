@@ -30,7 +30,7 @@ module PagSeguro
             if object.sender
               xml.send(:sender) {
                 xml.send(:hash_, object.sender.hash)
-                xml.send(:ip, object.sender.ip)
+                xml.send(:ip, object.sender.ip) if object.sender.ip.present?
               }
             end
 
